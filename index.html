@@ -32,7 +32,7 @@
     --sans: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --serif: Georgia, 'Times New Roman', serif;
   }
-  /* Bright light inversion. Same identity, readable on a cheap screen outdoors. */
+  /* Bright light inversion, kept but not exposed. Add class "bright" to body to switch. */
   body.bright {
     --paper: #F1EEE7;
     --sheet: #FAF8F3;
@@ -57,11 +57,6 @@
     --btn-hover: #96410F;
     --start-hover: #0B182B;
   }
-  .themebar { display: flex; justify-content: flex-end; margin-bottom: 0.9rem; }
-  .themebtn { background: transparent; border: 1px solid var(--hair); color: var(--ink-soft);
-    font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
-    font-weight: 600; padding: 0.42rem 0.75rem; cursor: pointer; }
-  .themebtn:hover { color: var(--ink); border-color: var(--ink-soft); }
   .flourish .rule-ink { stroke: var(--ink); }
   .flourish .rule-accent { stroke: var(--flame); }
   .flourish .dot { fill: var(--flame); }
@@ -112,8 +107,8 @@
 
   /* sources set as typed minutes with a clause marker in the left margin */
   .source { background: var(--white); border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); padding: 1.15rem 1.2rem 1.2rem 2.9rem; margin: 1.1rem 0; position: relative; }
-  .source .clause { position: absolute; left: 0.85rem; top: 1.15rem; font-family: var(--sans); font-size: 0.74rem; font-weight: 600; color: var(--flame); letter-spacing: 0.02em; }
-  .source-attr { font-family: var(--sans); font-size: 0.76rem; color: var(--ink-soft); margin-bottom: 0.7rem; line-height: 1.55; }
+  .source .clause { position: absolute; left: 0.85rem; top: 1.15rem;  font-size: 0.74rem; font-weight: 600; color: var(--flame); letter-spacing: 0.02em; }
+  .source-attr {  font-size: 0.76rem; color: var(--ink-soft); margin-bottom: 0.7rem; line-height: 1.55; }
   .source-body { font-size: 0.97rem; line-height: 1.75; }
   .source-body p { margin-bottom: 0.7rem; }
   .source-body p:last-child { margin-bottom: 0; }
@@ -126,13 +121,13 @@
   .evtag.ground { background: var(--chipB-bg); color: var(--chipB-fg); }
   .evtag.exit { background: var(--ev3-bg); color: var(--ev3-fg); }
 
-  .imgslot { margin: 1rem 0 0.2rem; padding: 1.4rem 1rem; border: 1px dashed var(--hair); text-align: center; font-family: var(--sans); font-size: 0.79rem; color: var(--ink-soft); background: var(--slot-bg); }
+  .imgslot { margin: 1rem 0 0.2rem; padding: 1.4rem 1rem; border: 1px dashed var(--hair); text-align: center;  font-size: 0.79rem; color: var(--ink-soft); background: var(--slot-bg); }
   .figure { margin: 1rem 0 0.3rem; }
   .figure img { display: block; height: auto; border: 1px solid var(--hair); margin: 0 auto; }
   .figure.wide img { width: 100%; max-width: 460px; }
   .figure.portrait img { width: 100%; max-width: 320px; }
   .figure svg { display: block; width: 100%; height: auto; }
-  .figure figcaption { font-family: var(--sans); font-size: 0.76rem; color: var(--ink-soft); margin-top: 0.5rem; line-height: 1.55; text-align: center; }
+  .figure figcaption {  font-size: 0.76rem; color: var(--ink-soft); margin-top: 0.5rem; line-height: 1.55; text-align: center; }
 
   .q-text { font-size: 1.14rem; line-height: 1.5; margin-bottom: 1.15rem; }
   .options { display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.15rem; }
@@ -143,7 +138,7 @@
   .option.correct { background: var(--ok-bg); border-color: var(--leaf); border-width: 2px; padding: 0.89rem 0.99rem; }
   .option.wrong { background: var(--bad-bg); border-color: var(--bad-border); border-width: 2px; padding: 0.89rem 0.99rem; }
   .option.dimmed { opacity: 0.5; }
-  .opt-letter { font-family: var(--sans); font-weight: 600; color: var(--flame); min-width: 1.1rem; }
+  .opt-letter {  font-weight: 600; color: var(--flame); min-width: 1.1rem; }
   .opt-text { flex: 1; }
   .opt-mark { font-weight: bold; font-size: 1.05rem; }
   .explanation { background: var(--white); border-top: 1px solid var(--hair); border-left: 3px solid var(--flame); padding: 1.05rem 1.15rem; margin-bottom: 0.3rem; }
@@ -166,9 +161,13 @@
   .btn-start .st { font-size: 1.08rem; font-weight: 600; }
   .btn-start .sa { font-size: 1.25rem; color: var(--flame); }
 
+  .btn-skip { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 0.6rem; padding: 0.85rem 1.35rem; background: transparent; border: 1px solid var(--hair); color: var(--ink-soft); cursor: pointer; font-family: var(--sans); text-align: left; transition: all 0.2s; }
+  .btn-skip:hover { color: var(--ink); border-color: var(--leaf); }
+  .btn-skip .sk-t { font-size: 0.92rem; }
+  .btn-skip .sk-a { font-size: 1.1rem; color: var(--leaf); }
   .score-row { display: grid; grid-template-columns: repeat(auto-fit,minmax(130px,1fr)); gap: 0.9rem; margin-bottom: 1.3rem; }
   .score-block { background: var(--sheet); border-top: 2px solid var(--ink); padding: 1.25rem 0.8rem; text-align: center; }
-  .score-num { font-family: var(--sans); font-size: 2.4rem; font-weight: 600; color: var(--ink); line-height: 1; }
+  .score-num { font-size: 2.4rem; font-weight: 700; color: var(--ink); line-height: 1; }
   .score-num.red { color: var(--flame); }
   .score-den { font-size: 1.05rem; color: var(--ink-soft); font-weight: 400; }
   .score-label { font-family: var(--sans); font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-top: 0.5rem; font-weight: 600; }
@@ -176,10 +175,10 @@
   .breakdown { background: var(--sheet); border-top: 2px solid var(--ink); padding: 1.25rem; margin-bottom: 1.3rem; }
   .breakdown-label { font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--leaf); font-weight: 600; margin-bottom: 1rem; text-align: center; }
   .bd-row { display: grid; grid-template-columns: 1fr 110px 46px; gap: 0.7rem; align-items: center; margin-bottom: 0.7rem; font-size: 0.86rem; }
-  .bd-name { font-family: var(--sans); font-size: 0.84rem; }
+  .bd-name { font-size: 0.92rem; }
   .bd-bar { height: 8px; background: var(--rail); overflow: hidden; }
   .bd-fill { height: 100%; background: var(--leaf); transition: width 0.4s; }
-  .bd-score { color: var(--ink-soft); text-align: right; font-weight: 600; font-family: var(--sans); }
+  .bd-score { color: var(--ink-soft); text-align: right; font-weight: 700; }
 
   .essaypanel { background: var(--tint); border-top: 1px solid var(--tint-rule); padding: 1.15rem 1.2rem; margin-top: 1.1rem; }
   .essaypanel-label { font-family: var(--sans); font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--leaf); font-weight: 600; margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.5rem; }
@@ -188,21 +187,122 @@
   .essaypanel p:first-of-type { text-indent: 0; }
   .essaypanel p:last-child { margin-bottom: 0; }
   .finalessay { background: var(--white); border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); padding: 1.5rem 1.4rem; margin: 1.1rem 0; }
-  .finalessay .fq { font-family: var(--sans); font-weight: 600; color: var(--flame); font-size: 0.97rem; margin-bottom: 1rem; line-height: 1.5; padding-bottom: 0.9rem; border-bottom: 1px solid var(--hair); }
+  .finalessay .fq {  font-weight: 600; color: var(--flame); font-size: 0.97rem; margin-bottom: 1rem; line-height: 1.5; padding-bottom: 0.9rem; border-bottom: 1px solid var(--hair); }
   .finalessay p { font-size: 0.96rem; line-height: 1.78; margin-bottom: 0.9rem; text-indent: 1.2rem; }
   .finalessay p:first-of-type { text-indent: 0; }
   .finalessay p:last-child { margin-bottom: 0; }
   .qbox { background: var(--white); border-top: 1px solid var(--hair); border-left: 3px solid var(--flame); padding: 1.05rem 1.2rem; margin: 1.3rem 0 1.5rem; }
   .qbox .qlabel { font-family: var(--sans); font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--flame); font-weight: 600; margin-bottom: 0.5rem; }
   .qbox .qtext { font-size: 1.05rem; line-height: 1.55; }
+  .terms { margin-top: 1.3rem; padding-top: 1rem; border-top: 1px solid var(--hair); }
+  .terms-label { font-family: var(--sans); font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--leaf); font-weight: 600; margin-bottom: 0.7rem; }
+  .term-row { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .term-btn { font-family: var(--sans); font-size: 0.84rem; padding: 0.42rem 0.75rem; background: transparent; border: 1px solid var(--hair); color: var(--ink); cursor: pointer; line-height: 1.3; }
+  .term-btn:hover { border-color: var(--leaf); }
+  .term-btn.open { background: var(--ok-bg); border-color: var(--leaf); }
+  .term-btn .plus { color: var(--leaf); font-family: var(--sans); font-weight: 600; margin-left: 0.4rem; }
+  .term-def { display: none; margin-top: 0.8rem; padding: 0.9rem 1rem; background: var(--white); border-top: 1px solid var(--hair); border-left: 3px solid var(--leaf); font-size: 0.92rem; line-height: 1.7; }
+  .term-def.open { display: block; }
+  .term-def strong {  font-size: 0.86rem; display: block; margin-bottom: 0.3rem; color: var(--leaf); }
+  .memory { background: var(--tint); border-top: 1px solid var(--tint-rule); padding: 1rem 1.15rem; margin: 1.1rem 0; }
+  .memory-label { font-family: var(--sans); font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--leaf); font-weight: 600; margin-bottom: 0.5rem; }
+  .memory-label.memory-toggle { display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; margin-bottom: 0; }
+  .memory-label.memory-toggle:hover { color: var(--ink); }
+  .memory-label .mplus { font-size: 0.95rem; line-height: 1; }
+  .memory.open .memory-label.memory-toggle { margin-bottom: 0.7rem; }
+  .memory p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.6rem; }
+  .memory p:last-child { margin-bottom: 0; }
+  .facts { margin: 1rem 0 0.4rem; padding-left: 1.15rem; }
+  .facts li { font-size: 0.97rem; line-height: 1.7; margin-bottom: 0.5rem; }
+  .key { color: var(--leaf); font-weight: 700; }
+  .card p strong, .card li strong, .memory strong, .recap strong, .source-body strong, .scenario strong { color: var(--leaf); font-weight: 700; }
+  .recap { background: var(--sheet); border-top: 2px solid var(--leaf); padding: 1.35rem 1.4rem 1.5rem; }
+  .recap h2 { font-family: var(--sans); font-size: 1.28rem; font-weight: 600; margin-bottom: 0.9rem; }
+  .recap ul { margin: 0; padding-left: 1.15rem; }
+  .recap li { font-size: 0.97rem; line-height: 1.75; margin-bottom: 0.55rem; }
+  .recap li:last-child { margin-bottom: 0; }
+  .cover { min-height: 82vh; display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 1rem 0 2rem; }
+  .cover-eyebrow { font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--flame); font-weight: 600; margin-bottom: 1.4rem; }
+  .cover-title { font-family: var(--sans); font-size: clamp(2.4rem, 9vw, 4rem); font-weight: 600; line-height: 1.04; letter-spacing: -0.02em; color: var(--ink); }
+  .cover .flourish { margin: 1.5rem auto 1.4rem; }
+  .cover-line { font-family: var(--serif); font-style: italic; font-size: clamp(1.05rem, 3vw, 1.4rem); color: var(--ink-soft); line-height: 1.6; max-width: 32rem; margin: 0 auto; }
+  .cover-sub { font-family: var(--sans); font-size: 0.76rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); margin-top: 1.6rem; }
+  .cover-actions { margin-top: 2.2rem; display: flex; flex-direction: column; align-items: center; gap: 0.7rem; }
+  .btn-begin { padding: 1rem 3rem; font-size: 1.05rem; }
+  .cover .btn-skip { width: auto; justify-content: center; }
+  .story { padding-top: 0.6rem; }
+  .story-marker { text-align: center; margin-bottom: 0.4rem; }
+  .story-num {  font-size: clamp(2.4rem, 8vw, 3.6rem); font-weight: 700; color: var(--flame); line-height: 1; letter-spacing: -0.02em; }
+  .story-unit { font-family: var(--sans); font-size: 0.64rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink-soft); margin-top: 0.35rem; }
+  .story-rule { height: 1px; background: var(--hair); margin: 1.2rem 0 1.6rem; }
+  .story-line { font-size: 1.12rem; line-height: 1.85; color: var(--ink); opacity: 0; transform: translateY(6px); transition: opacity 0.5s ease, transform 0.5s ease; margin-bottom: 0.9rem; }
+  .story-line.vis { opacity: 1; transform: translateY(0); }
+  .story-line.last { color: var(--leaf); font-style: italic; }
+  .modal-back { position: fixed; inset: 0; background: rgba(8,16,28,0.72); display: flex; align-items: center; justify-content: center; padding: 1.2rem; z-index: 50; }
+  .modal { background: var(--sheet); border-top: 3px solid var(--flame); max-width: 24rem; width: 100%; padding: 1.6rem 1.5rem 1.5rem; text-align: center; }
+  .modal-label { font-family: var(--sans); font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--leaf); font-weight: 600; margin-bottom: 0.7rem; }
+  .modal h3 { font-family: var(--sans); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.7rem; }
+  .modal p { font-size: 1rem; line-height: 1.7; color: var(--ink); margin-bottom: 1.3rem; }
+  /* --- ordering and sorting --- */
+  .ord-strip { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 0.9rem; }
+  .ord-slot { display: flex; align-items: center; gap: 0.7rem; width: 100%; text-align: left; padding: 0.75rem 0.9rem; background: var(--paper); border: 1px solid var(--hair); font-size: 0.94rem; color: var(--ink); font-family: inherit; cursor: pointer; -webkit-user-select: none; user-select: none; }
+  .ord-slot .ord-txt { flex: 1; }
+  .ord-slot .ord-x { color: var(--ink-soft); font-size: 0.85rem; }
+  .ord-slot:disabled { cursor: default; }
+  .ord-slot.filled { border-style: solid; background: var(--white); }
+  .ord-slot.right { border-color: var(--leaf); background: var(--ok-bg); }
+  .ord-slot.wrong { border-color: var(--bad-border); background: var(--bad-bg); }
+  .ord-rank {  font-weight: 700; color: var(--flame); min-width: 1.2rem; }
+  .ord-pool { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 1rem; }
+  .ord-chip { text-align: left; -webkit-user-select: none; user-select: none; padding: 0.8rem 0.95rem; background: var(--paper); border: 1px solid var(--hair); color: var(--ink); font-family: inherit; font-size: 0.94rem; line-height: 1.5; cursor: pointer; }
+  .ord-chip:hover:not(:disabled) { border-color: var(--leaf); background: var(--white); }
+  .ord-chip:disabled { opacity: 0.3; cursor: default; }
+  .ord-actions { display: flex; gap: 0.6rem; margin-bottom: 0.4rem; flex-wrap: wrap; }
+  .btn-small { font-family: var(--sans); font-size: 0.82rem; padding: 0.55rem 1rem; background: transparent; border: 1px solid var(--hair); color: var(--ink); cursor: pointer; }
+  .btn-small:hover:not(:disabled) { border-color: var(--leaf); }
+  .btn-small:disabled { opacity: 0.35; cursor: not-allowed; }
+  .sort-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-bottom: 1rem; }
+  .sort-col { background: var(--sheet); border-top: 2px solid var(--hair); padding: 0.8rem 0.7rem; min-height: 5rem; }
+  .sort-col h4 { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--leaf); margin-bottom: 0.6rem; }
+  .sort-tag { display: block; width: 100%; text-align: left; font-size: 0.86rem; line-height: 1.45; padding: 0.5rem 0.6rem; margin-bottom: 0.4rem; background: var(--white); border: 1px solid var(--hair); color: var(--ink); }
+  .sort-tag.right { border-color: var(--leaf); background: var(--ok-bg); }
+  .sort-tag.wrong { border-color: var(--bad-border); background: var(--bad-bg); }
+  .sort-prompt {  font-size: 0.78rem; color: var(--ink-soft); margin-bottom: 0.6rem; }
+  /* --- carousel --- */
+  .car { margin: 1.1rem 0 0.4rem; }
+  .car [data-car-next] { border-color: var(--flame); color: var(--flame); }
+  .car.car-done [data-car-next] { border-color: var(--hair); color: var(--ink); }
+  .car-frame { background: var(--white); border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); padding: 1.2rem 1.2rem 1.3rem; min-height: 8.5rem; }
+  .car-count { font-family: var(--sans); font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--flame); font-weight: 600; margin-bottom: 0.6rem; }
+  .car-body { font-size: 1rem; line-height: 1.72; }
+  .car-body strong { color: var(--leaf); }
+  .car-nav { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; margin-top: 0.7rem; }
+  .car-dots { display: flex; gap: 0.35rem; align-items: center; }
+  .car-hint { font-family: var(--sans); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); }
+  .car-prompt { display: flex; align-items: baseline; gap: 0.5rem; font-family: var(--sans); font-size: 0.82rem; color: var(--flame); margin-bottom: 0.55rem; }
+  .car-prompt .cp-mark { font-size: 1rem; line-height: 1; }
+  .car-prompt.done { color: var(--leaf); }
+  .car-dot.read { background: var(--leaf); }
+  .car-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--hair); border: none; padding: 0; cursor: pointer; }
+  .car-dot.on { background: var(--flame); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr)); gap: 0.7rem; margin: 1.1rem 0 0.5rem; }
+  .stat { background: var(--sheet); border-top: 2px solid var(--flame); padding: 0.9rem 0.8rem; text-align: center; }
+  .stat-n {  font-size: 1.7rem; font-weight: 700; color: var(--ink); line-height: 1; }
+  .stat-l { font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin-top: 0.45rem; line-height: 1.4; }
+  .blist { list-style: none; margin: 1rem 0 0.4rem; padding: 0; }
+  .blist li { position: relative; padding-left: 1.5rem; font-size: 1rem; line-height: 1.72; margin-bottom: 0.75rem; }
+  .blist li:last-child { margin-bottom: 0; }
+  .blist li::before { content: ""; position: absolute; left: 0; top: 0.62rem; width: 8px; height: 8px; background: var(--flame); }
+  .blist li strong { color: var(--leaf); }
+  .blist.leaf li::before { background: var(--leaf); }
+  .quiet { color: var(--ink-soft); }
+  .quiet.pull { border-left-color: var(--hair); }
   .hidden { display: none !important; }
-  .footer { text-align: center; font-family: var(--sans); font-size: 0.76rem; color: var(--ink-soft); margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid var(--hair); line-height: 1.65; }
+  .footer { text-align: center;  font-size: 0.76rem; color: var(--ink-soft); margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid var(--hair); line-height: 1.65; }
 </style>
 </head>
 <body>
 <div class="container">
-  <div class="themebar"><button class="themebtn" id="theme-btn" type="button">Bright light</button></div>
-
 
   <div class="top-bar hidden" id="top-bar">
     <div class="top-meta"><span id="stage-name">The coming of democracy</span><span class="top-count" id="step-count">Step 1</span></div>
@@ -210,27 +310,22 @@
   </div>
 
   <div id="start-screen">
-    <div class="header-block">
+    <div class="cover">
+      <div class="cover-eyebrow">Kula Revise &middot; Coming of Democracy</div>
+      <h1 class="cover-title">Why Anyone Sat Down</h1>
       <svg class="flourish" viewBox="0 0 260 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <line class="rule-ink" x1="0" y1="2" x2="130" y2="24" stroke-width="1.4"/>
         <line class="rule-accent" x1="260" y1="2" x2="130" y2="24" stroke-width="1.4"/>
         <circle class="dot" cx="130" cy="24" r="2.4"/>
       </svg>
-      <div class="eyebrow">Kula Revise &middot; Grade 12 History &middot; Coming of democracy</div>
-      <h1 class="masthead">Why Anyone Sat Down</h1>
-      <div class="sub">1989 to February 1990 &middot; Lesson 1 of 5</div>
+      <div class="cover-line">A country stuck. A president nobody expected. A prisoner who walked out after twenty seven years.</div>
+      <div class="cover-sub">1989 to February 1990 &middot; Lesson 1 of 5</div>
+      <div class="cover-actions">
+        <button class="btn-primary btn-begin" id="begin-btn">Begin &rarr;</button>
+        <button class="btn-skip hidden" id="skip-btn"><span class="sk-t">Skip the opening if you have done this lesson before</span><span class="sk-a">&rarr;</span></button>
+      </div>
     </div>
-    <div class="intro-box">
-      <div class="intro-label">Where we are</div>
-      <p class="intro-text">This is the first move of one essay you will build across five lessons. The question you are heading for asks how far the political will of leaders produced democracy in 1994. Before you can answer that, you need to know what leaders were actually choosing between in 1989, and why a stalemate on its own settles nothing.</p>
-    </div>
-    <div class="key-row">
-      <div class="key-item"><span class="chip chip-argue">Argue</span><span class="key-desc">Take a clear line and hold it</span></div>
-      <div class="key-item"><span class="chip chip-evidence">Evidence</span><span class="key-desc">Back the case with specific facts</span></div>
-      <div class="key-item"><span class="chip chip-weigh">Weigh</span><span class="key-desc">Judge it, answer 'to what extent'</span></div>
-    </div>
-    <button class="btn-start" id="begin-btn"><span class="st">Start with the argument</span><span class="sa">&rarr;</span></button>
-    <div class="footer">About 20 minutes. Six marked questions. You finish holding the first sentence of your essay.</div>
+    <div class="footer">About 25 minutes. Nine marked questions, a fact recap, and a one line summary to keep.</div>
   </div>
 
   <div id="flow-screen" class="hidden">
@@ -238,6 +333,23 @@
     <div class="nav">
       <button class="btn-secondary" id="back-btn">&larr; Back</button>
       <button class="btn-primary" id="next-btn">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <div class="modal-back hidden" id="added-modal">
+    <div class="modal">
+      <div class="modal-label">Added to your skeleton</div>
+      <p id="added-text"></p>
+      <button class="btn-primary" id="added-close">Got it</button>
+    </div>
+  </div>
+
+  <div class="modal-back hidden" id="done-modal">
+    <div class="modal">
+      <div class="modal-label">Lesson complete</div>
+      <h3>Why Anyone Sat Down</h3>
+      <p>Click on the arrow above to continue to the next lesson.</p>
+      <button class="btn-primary" id="done-close">Got it</button>
     </div>
   </div>
 
@@ -252,12 +364,12 @@
       <div class="score-block"><div class="score-num red" id="r-band">-</div><div class="score-label">Standard</div></div>
     </div>
     <div class="grade-desc" id="r-desc"></div>
-    <div class="breakdown"><div class="breakdown-label">By essay skill</div><div id="r-breakdown"></div></div>
+    <div class="breakdown"><div class="breakdown-label">By skill</div><div id="r-breakdown"></div></div>
     <div class="card">
-      <div class="stage-tag">The essay so far</div>
-      <p class="pull">Neither side could win, but a stalemate does not negotiate itself: leaders had to choose to act on it, and in 1990 De Klerk and Mandela did.</p><p>That is sentence one. It concedes something real, that both sides were stuck, and then it refuses to let the stalemate do the work on its own. Hold that shape. Every sentence you add over the next four lessons keeps conceding and then judging.</p>
+      <div class="stage-tag">Your running summary</div>
+      <p class="pull quiet">Neither side could win, but a stalemate does not negotiate itself: leaders had to choose to act on it, and in 1990 De Klerk and Mandela did.</p><p class="quiet">That is the whole of 1989 to February 1990 in one sentence. Keep it. Three more follow, and together the four of them answer a real exam question.</p>
     </div>
-    <div class="nav" style="justify-content: center;"><button class="btn-primary" id="redo-btn">&#8635; Restart lesson</button></div>
+    <div class="nav" style="justify-content: center; gap: 0.7rem;"><button class="btn-secondary" id="redo-btn">&#8635; Restart lesson</button><button class="btn-primary" id="finish-btn">Finish &rarr;</button></div>
     <div class="footer">Next: Lesson 2, agreements nobody had to keep.</div>
   </div>
 </div>
@@ -287,21 +399,30 @@ const BANDS = [
   {
     "min": 0,
     "band": "Start again",
-    "desc": "Restart the lesson and take the source cards slowly. This one sets up the other four, so it is worth the second pass."
+    "desc": "Restart the lesson and take the two explainers slowly. This one sets up the other four, so it is worth the second pass."
   }
 ];
 
 const FLOW = [
   {
-    "type": "narrative",
+    "type": "story",
     "stage": "Recognise",
-    "html": "<div class=\"stage-tag\">Something you have seen</div><h2>Two Sides, One Thing, and No Way to Force It</h2><p>Two groups have been arguing for years over something they both need and neither can share. Each side has people behind it. Each side has said in public that it will never back down.</p><div class=\"scenario\">Nothing has moved for a long time. One side cannot make the other leave. The other side cannot make the first one give in. Everyone is tired. Everyone is still there.<div class=\"scenario-meta\">A stalemate</div></div><p>Now answer honestly, before you read another word.</p>"
+    "marker": "1989",
+    "markerLabel": "Victor Verster prison, Paarl",
+    "lines": [
+      "You have been in prison for twenty six years.",
+      "Two years ago they moved you out of the cells and into a warder's house with a swimming pool.",
+      "Ministers of the government that jailed you keep coming to visit.",
+      "They bring tea. They ask what it would take.",
+      "Neither side will say in public that these meetings are happening.",
+      "Neither side can win without them."
+    ]
   },
   {
     "type": "question",
     "stage": "Recognise",
     "kind": "everyday",
-    "q": "Both sides are stuck and both sides know it. Does the argument now end on its own?",
+    "q": "Both sides are stuck and both sides know it. Does that end the fight on its own?",
     "options": [
       "No. Being stuck is a situation, someone still has to act",
       "Yes. Once neither side can win, the fight simply stops itself",
@@ -309,13 +430,13 @@ const FLOW = [
       "No, and it never ends, because nobody in politics backs down"
     ],
     "correct": 0,
-    "explanation": "Most people pick {opt0}, and that is the right instinct. Being stuck explains why talking becomes possible. It does not explain why anyone speaks first. Hold on to that gap. You will use it on every screen in this lesson."
+    "explanation": "{opt0}. Being stuck is not the same as being over. {opt1} feels right to a lot of people, because a fight nobody can win should just fizzle out. It does not. Someone still has to make the first move, and you are about to meet the two who did."
   },
   {
     "type": "question",
     "stage": "Recognise",
     "kind": "everyday",
-    "q": "If one side does speak first, what does it cost them with their own supporters?",
+    "q": "If one side offers to talk first, what does that cost them with their own supporters?",
     "options": [
       "It looks weak, and some of their own supporters turn away",
       "Nothing at all, because supporters always want the argument to end",
@@ -323,81 +444,156 @@ const FLOW = [
       "It looks strong, and their supporters back them even harder afterwards"
     ],
     "correct": 0,
-    "explanation": "{opt0} is what usually happens. Speaking first looks like weakness to the people standing behind you. That cost is why deadlocks last for years. Keep it in mind when you read what De Klerk did in 1990."
+    "explanation": "{opt0}. Going first makes you look weak to your own side. That is why a deadlock like this can sit for years. Nobody wants to be the one who moved."
   },
   {
     "type": "narrative",
     "stage": "Destabilise",
-    "html": "<div class=\"stage-tag\">The turn</div><h2>You Just Weighed a Cause</h2><p>You separated two things that look the same from the outside. The situation both sides were in, and the decision one of them made.</p><p class=\"pull\">A stalemate makes a choice possible. It does not make the choice.</p><p>That distinction is the whole essay you are about to build. The exam calls this political will and determination. The question you are heading for asks how far the political will and determination of leaders during the negotiation process led to a democratic South Africa in 1994. Everyone can list what forced them. It is much harder to say what leaders still had to decide once they were forced.</p>"
+    "html": "<div class=\"stage-tag\">The turn</div><h2>Stuck Is Not the Same as Finished</h2><p>Being stuck was the situation. Somebody choosing to talk was the decision. Those are two different things, and only one of them is a choice.</p><p class=\"pull\">A stalemate makes a choice possible. It does not make the choice.</p><p>In this topic that second thing has a name: political will and determination.</p>"
   },
   {
     "type": "narrative",
     "stage": "Act",
-    "html": "<div class=\"stage-tag\">Where the country was</div><h2>By 1989, Neither Side Could Finish It</h2><p>The apartheid government could not crush resistance. Township revolt, strikes, school boycotts and consumer boycotts had run through the 1980s and kept coming back. States of emergency and mass detention slowed protest down and never ended it.</p><p>The liberation movements could not take power either. The ANC was banned, its leaders were in prison or in exile, and its armed wing could damage the state without defeating an army.</p><p>Add the outside pressure. Sanctions, disinvestment, sports and cultural boycotts and the loss of foreign loans were squeezing an economy that was already struggling.</p>"
+    "html": "<div class=\"stage-tag\">Where the country was</div><h2>By 1989, Neither Side Could Finish It</h2><p>The apartheid government could not crush resistance. Township revolt, strikes, school boycotts and consumer boycotts had run through the 1980s and kept coming back. States of emergency and mass detention slowed protest down and never ended it.</p><p>The liberation movements could not take power either. The ANC was banned, its leaders were in prison or in exile, and its armed wing could damage the state without defeating an army.</p>",
+    "terms": [
+      {
+        "t": "state of emergency",
+        "d": "A declaration that lets the government suspend normal law. Police could detain people without charge, ban meetings and censor reporting."
+      },
+      {
+        "t": "detention without trial",
+        "d": "Being held in prison without being charged or taken to court. Thousands were held this way in the 1980s."
+      },
+      {
+        "t": "liberation movement",
+        "d": "An organisation fighting to end a system of rule. The ANC, the PAC and the SACP were all liberation movements."
+      },
+      {
+        "t": "armed wing",
+        "d": "The military section of a political movement. The ANC's was called Umkhonto we Sizwe."
+      }
+    ]
+  },
+  {
+    "type": "narrative",
+    "stage": "Act",
+    "html": "<div class=\"stage-tag\">The evidence</div><h2>The Pressure From Outside</h2><p>Outside, sanctions, disinvestment, sports and cultural boycotts and the loss of foreign loans were squeezing an economy that was already struggling. The war in Angola and Namibia was expensive and was ending badly.</p><div class=\"memory\"><div class=\"memory-label\">Remember it like this</div><p>Two arms locked in an arm wrestle. Neither arm goes down. Both arms are shaking.</p><p>That is <span class=\"key\">1989</span>. The word for it is a stalemate, and a stalemate is a position, not a plan.</p></div>",
+    "terms": [
+      {
+        "t": "sanctions",
+        "d": "Punishments applied by other countries. Trade bans, arms bans and refusing loans were all used against South Africa."
+      },
+      {
+        "t": "disinvestment",
+        "d": "Foreign companies and banks pulling their money out of a country. It made borrowing harder and more expensive."
+      }
+    ]
   },
   {
     "type": "source",
     "stage": "Act",
-    "html": "<div class=\"stage-tag\">The evidence</div><h2>What the Pressure Looked Like on Paper</h2><p>Read this as a ledger of the position in 1989, not as a story. You will use these facts as evidence later, so notice which side each one squeezes.</p>",
+    "html": "<div class=\"stage-tag\">The evidence</div><h2>What the Pressure Looked Like on Paper</h2><p>Two lists. The first is what was hurting the government. The second is what was hurting the liberation movements.</p>",
     "source": {
       "clause": "1.",
-      "attr": "Source A: the position by 1989. A summary of the record, written for Kula Revise.",
+      "attr": "Explainer 1: the position by 1989. Written by Kula Revise from the historical record. Not a document from the time.",
       "body": "<p>Pressing on the government: mass resistance inside the country that emergency rule had not stopped; international sanctions and disinvestment; the cost of the war in Angola and Namibia; an economy short of foreign capital.</p><p>Pressing on the liberation movements: the ANC banned since 1960; leaders imprisoned or in exile for decades; an armed struggle that could not overthrow the state; the Soviet Union pulling back from funding allies abroad.</p><p>Result: <em>neither side could impose an outcome on the other.</em></p>",
       "evidence": {
         "cls": "ground",
         "label": "Evidence &middot; the deadlock"
       },
-      "toggle": "Every line here is a pressure, not a decision. The word for this position is a stalemate: neither side can force the other to move. Read the whole ledger and you still do not know why anyone picked up a phone. That gap is where your argument lives."
+      "toggle": "Every line here is a pressure, not a decision. The word for this position is a stalemate: neither side can force the other to move. Read the whole ledger and you still do not know why anyone picked up a phone. Your answer has to explain that, and the facts on this card will not do it for you."
     }
   },
   {
     "type": "question",
     "stage": "Act",
-    "stagelabel": "evidence",
     "level": "Evidence",
-    "q": "Which fact best backs the claim that by 1989 neither side could impose an outcome?",
-    "options": [
-      "Protest and sanctions hurt the state, yet the movements could not remove it",
-      "The government had lost control of every township and every city by 1989",
-      "The ANC's armed wing had grown strong enough to defeat the state's army",
-      "Sanctions had already closed most of the country's mines and its biggest factories"
+    "mode": "sort",
+    "correct": 1,
+    "q": "By 1989 both sides were stuck. Put each pressure with the side it was squeezing.",
+    "groups": [
+      "On the government",
+      "On the movements"
     ],
-    "correct": 0,
-    "explanation": "{opt0} carries both halves of the deadlock in one sentence, which is what the claim needs. The other three overstate one side. {opt1} is wrong because the state still held the cities and the police. {opt2} is wrong because the armed struggle never came close to beating the army. {opt3} is wrong because sanctions hurt the economy without closing the mines. If you overclaim like this, a marker stops trusting your other facts and marks the paragraph lower."
+    "items": [
+      "Township revolt that emergency rule could not stop",
+      "International sanctions and disinvestment",
+      "The cost of the war in Angola and Namibia",
+      "Banned since 1960, leaders in prison or exile",
+      "An armed struggle that could not beat the army",
+      "The Soviet Union pulling back from funding allies"
+    ],
+    "answers": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "explanation": "Three each way, which is what a stalemate looks like written down. The state was being hurt and could not stop the protests. The movements were hurting it and still could not remove it. Say both halves in one sentence and the marker can see you understand the deadlock. Say only one half and you have overstated it."
   },
   {
     "type": "narrative",
     "stage": "Act",
-    "html": "<div class=\"stage-tag\">The evidence</div><h2>The President Who Would Not Move, and the One Who Replaced Him</h2><p>PW Botha had reformed the edges of apartheid and refused the centre of it. In 1989 his health failed after a stroke, and he then fell out with his own party. Part of that quarrel was over a planned meeting between senior National Party figures and the ANC in Lusaka.</p><p>Botha stepped down. FW de Klerk replaced him as party leader and then as president in 1989. Nothing about the deadlock changed on the day the office changed hands. What changed was who was sitting in it.</p><figure class=\"figure\"><svg viewBox=\"0 0 400 232\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A deadlock in 1989, then three decisions taken by February 1990: Botha replaced by De Klerk, the movements unbanned on 2 February, and Mandela released on 11 February.\"><text x=\"10\" y=\"16\" style=\"font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:10.5px;letter-spacing:1.6px;fill:var(--ink-soft)\">THE DEADLOCK</text><line x1=\"20\" y1=\"44\" x2=\"168\" y2=\"44\" style=\"stroke:var(--ink-soft);stroke-width:2\"/><polygon points=\"184,44 166,38 166,50\" style=\"fill:var(--ink-soft)\"/><line x1=\"380\" y1=\"44\" x2=\"232\" y2=\"44\" style=\"stroke:var(--ink-soft);stroke-width:2\"/><polygon points=\"216,44 234,38 234,50\" style=\"fill:var(--ink-soft)\"/><rect x=\"196\" y=\"30\" width=\"8\" height=\"28\" style=\"fill:var(--flame)\"/><text x=\"200\" y=\"76\" text-anchor=\"middle\" style=\"font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;fill:var(--ink)\">Neither side can win</text><line x1=\"20\" y1=\"128\" x2=\"380\" y2=\"128\" style=\"stroke:var(--hair);stroke-width:2\"/><circle cx=\"66\" cy=\"128\" r=\"5\" style=\"fill:var(--flame)\"/><circle cx=\"200\" cy=\"128\" r=\"5\" style=\"fill:var(--flame)\"/><circle cx=\"336\" cy=\"128\" r=\"5\" style=\"fill:var(--flame)\"/><text x=\"66\" y=\"114\" text-anchor=\"middle\" style=\"font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:11.5px;fill:var(--flame)\">1989</text><text x=\"200\" y=\"114\" text-anchor=\"middle\" style=\"font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:11.5px;fill:var(--flame)\">2 Feb 1990</text><text x=\"336\" y=\"114\" text-anchor=\"middle\" style=\"font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:11.5px;fill:var(--flame)\">11 Feb 1990</text><text x=\"66\" y=\"150\" text-anchor=\"middle\" style=\"font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:12px;fill:var(--ink)\">Botha out,</text><text x=\"66\" y=\"166\" text-anchor=\"middle\" style=\"font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:12px;fill:var(--ink)\">De Klerk in</text><text x=\"200\" y=\"150\" text-anchor=\"middle\" style=\"font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:12px;fill:var(--ink)\">ANC, PAC and</text><text x=\"200\" y=\"166\" text-anchor=\"middle\" style=\"font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:12px;fill:var(--ink)\">SACP unbanned</text><text x=\"336\" y=\"150\" text-anchor=\"middle\" style=\"font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:12px;fill:var(--ink)\">Mandela freed,</text><text x=\"336\" y=\"166\" text-anchor=\"middle\" style=\"font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:12px;fill:var(--ink)\">no conditions</text><line x1=\"20\" y1=\"192\" x2=\"380\" y2=\"192\" style=\"stroke:var(--hair);stroke-width:1\"/><text x=\"20\" y=\"214\" style=\"font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:12px;fill:var(--ink-soft)\">The deadlock held for years. These three steps took nine days.</text></svg><figcaption>What the first year of the process looked like: a deadlock that had held for years, then three decisions taken between 1989 and 11 February 1990. The dates matter because the deadlock did not move on its own and the decisions took nine days. Original diagram by Kula Revise.</figcaption></figure>"
+    "html": "<div class=\"stage-tag\">The evidence</div><h2>The Price of Sitting Down: the Harare Declaration</h2><p>Before any of this, the ANC set out what the government had to do before talks could even start. Oliver Tambo took the draft around Africa, and on <span class=\"key\">21 August 1989</span> the Organisation of African Unity adopted it in Harare, Zimbabwe. The United Nations backed it in December.</p><p>The Harare Declaration set five preconditions, meaning five things the government had to do before talks could begin:</p><p class=\"sort-prompt\">Tap the arrows to read all 5.</p><div class=\"car\" data-car=\"[&quot;<strong>1. Release</strong><br>All political prisoners and detainees, unconditionally.&quot;, &quot;<strong>2. Unban</strong><br>All banned organisations, and lift the restrictions on people.&quot;, &quot;<strong>3. Remove</strong><br>All troops from the townships.&quot;, &quot;<strong>4. End</strong><br>The state of emergency, and repeal laws like the Internal Security Act.&quot;, &quot;<strong>5. Stop</strong><br>All political executions.&quot;]\"><div class=\"car-prompt\" data-car-prompt></div><div class=\"car-frame\"><div class=\"car-count\" data-car-count></div><div class=\"car-body\" data-car-body></div></div><div class=\"car-nav\"><button class=\"btn-small\" data-car-prev>&larr;</button><span class=\"car-hint\" data-car-hint></span><div class=\"car-dots\"><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button></div><button class=\"btn-small\" data-car-next>&rarr;</button></div></div><div class=\"memory\"><div class=\"memory-label\">Remember it like this</div><p>A price list pinned to the door. Before you come in, you pay all five.</p><p>Then count how many of the five he pays on <span class=\"key\">2 February 1990</span>, and how many he does not.</p></div>",
+    "terms": [
+      {
+        "t": "Harare Declaration",
+        "d": "The list of conditions the ANC set for talks. African states adopted it on 21 August 1989."
+      },
+      {
+        "t": "Organisation of African Unity",
+        "d": "The body that united independent African states. It backed the liberation movements and later became the African Union."
+      },
+      {
+        "t": "precondition",
+        "d": "Something that must happen before something else can start. The Declaration set five preconditions for talks."
+      },
+      {
+        "t": "Internal Security Act",
+        "d": "The law that let the state ban organisations, detain people and restrict what they could say or do."
+      }
+    ]
+  },
+  {
+    "type": "question",
+    "stage": "Act",
+    "level": "Evidence",
+    "q": "Which of these was one of the five Harare Declaration demands?",
+    "options": [
+      "Remove all of the government troops from the townships",
+      "Hand over the government to the ANC within one year",
+      "Give back all of the land taken under the Land Acts",
+      "Hold an election for white voters on the question of reform"
+    ],
+    "correct": 0,
+    "explanation": "{opt0} is one of the five, and the others are things people often assume were demanded. The list was about clearing the way for talks, not about winning them. {opt1} would have been a demand for surrender, and the ANC knew the government would never accept it. Know the five and you can show the marker exactly what De Klerk did and did not do in February 1990."
   },
   {
     "type": "question",
     "stage": "Act",
     "level": "Argue",
-    "q": "Which sentence argues, rather than just telling the marker what happened?",
+    "q": "Which sentence uses the Harare Declaration to argue, rather than just to list it?",
     "options": [
-      "Botha's removal mattered because it put a leader in office willing to test negotiation",
-      "PW Botha suffered a stroke in 1989 and was then replaced by FW de Klerk",
-      "In 1989 the National Party chose a new leader and De Klerk became president",
-      "Botha's removal proves the government had already given up on apartheid entirely"
+      "The Declaration set the price of talks, so De Klerk knew what moving would cost",
+      "In August 1989 the Organisation of African Unity adopted the Harare Declaration in Zimbabwe",
+      "The Harare Declaration was a very important document in the history of the negotiations",
+      "The Declaration proves the ANC was in full control of the process from the very beginning"
     ],
     "correct": 0,
-    "explanation": "{opt0} names the change and then says why it counts. That is what arguing looks like. {opt1} and {opt2} are true and do no work, because they only narrate. A marker treats narration as background and pays little for it. {opt3} takes a line the evidence will not carry. De Klerk opened talks expecting to keep a share of power, not to end white rule. If you only narrate here, you earn context marks and not argument marks."
+    "explanation": "{opt0} says what the document did to the situation. That is arguing. {opt1} is the trap. It is true, and it stops there. {opt3} goes too far: the government still held the police, the army and parliament. Say what a document changed and you turn a date into a point the marker can credit."
   },
   {
-    "type": "source",
+    "type": "narrative",
     "stage": "Act",
-    "html": "<div class=\"stage-tag\">The evidence</div><h2>The Talking Had Already Started, Quietly</h2><p>Long before anything was announced, people on both sides had been testing whether the other side was real.</p>",
-    "source": {
-      "clause": "2.",
-      "attr": "Source B: contacts before 1990. A summary of the record, written for Kula Revise.",
-      "body": "<p>1985: a group of business leaders led by Gavin Relly flew to Lusaka to meet Oliver Tambo and the ANC in exile.</p><p>1985 onwards: government ministers held secret talks with Nelson Mandela, who had been moved off Robben Island to a mainland prison and later to a house on a prison farm.</p><p>1987: Van Zyl Slabbert led a group of Afrikaners to Dakar in Senegal to meet ANC leaders.</p><p>1985: Botha offered Mandela release on condition that he reject violence. <em>Mandela refused the offer.</em></p>",
-      "evidence": {
-        "cls": "home",
-        "label": "Evidence &middot; before the announcement"
-      },
-      "toggle": "None of this is inside your date range on its own. It is background, and background earns marks only when it explains something inside the range. Here it explains why February 1990 was possible so fast: the groundwork was already laid."
-    }
+    "html": "<div class=\"stage-tag\">The evidence</div><h2>The Talking Had Already Started, Quietly</h2><p>Long before anything was announced, both sides were testing each other in private.</p><p class=\"sort-prompt\">Tap the arrows to read all 4.</p><div class=\"car\" data-car=\"[&quot;<strong><span class=\\&quot;key\\&quot;>1985</span>.</strong> Business leaders led by Gavin Relly flew to Lusaka to meet Oliver Tambo and the ANC in exile.&quot;, &quot;<span class=\\&quot;key\\&quot;>1985</span> onwards. Government ministers held secret talks with Nelson Mandela, who had been moved off Robben Island to Pollsmoor and later to a house at Victor Verster prison.&quot;, &quot;<strong><span class=\\&quot;key\\&quot;>1987</span>.</strong> Van Zyl Slabbert led a group of Afrikaners to Dakar in Senegal to meet ANC leaders.&quot;, &quot;<strong><span class=\\&quot;key\\&quot;>1985</span>.</strong> PW Botha offered Mandela release if he rejected violence. Mandela refused.&quot;]\"><div class=\"car-prompt\" data-car-prompt></div><div class=\"car-frame\"><div class=\"car-count\" data-car-count></div><div class=\"car-body\" data-car-body></div></div><div class=\"car-nav\"><button class=\"btn-small\" data-car-prev>&larr;</button><span class=\"car-hint\" data-car-hint></span><div class=\"car-dots\"><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button></div><button class=\"btn-small\" data-car-next>&rarr;</button></div></div><div class=\"memory\"><div class=\"memory-label\">Remember it like this</div><p>Five years of private contact came before any of this was announced.</p><p>That is why February 1990 could happen so fast. The groundwork was already there.</p></div>",
+    "terms": [
+      {
+        "t": "exile",
+        "d": "Someone living outside their own country because going home would mean arrest. Thousands of ANC members were in exile."
+      }
+    ]
   },
   {
     "type": "question",
@@ -411,26 +607,81 @@ const FLOW = [
       "He had been told the offer would be repeated within a year"
     ],
     "correct": 0,
-    "explanation": "{opt0} is right. Taking the 1985 deal meant rejecting the armed struggle while the ANC was still banned. He would have got nothing in return. Refusing kept the price of his freedom high. You are looking at a political choice made from a prison cell."
+    "explanation": "{opt0}. Think about what saying yes would have cost him. The ANC was still banned. He would have given up the armed struggle and got nothing back. Saying no kept his freedom expensive. You are looking at a political choice, made from a cell."
+  },
+  {
+    "type": "narrative",
+    "stage": "Act",
+    "html": "<div class=\"stage-tag\">The evidence</div><h2>Botha Falls</h2><p>PW Botha had reformed the edges of apartheid and refused the centre of it. In <span class=\"key\">1989</span> he suffered a stroke, and then fell out with his own party over a planned meeting with the ANC in Lusaka. He stepped down. FW de Klerk replaced him as party leader and then as president.</p>",
+    "terms": [
+      {
+        "t": "stroke",
+        "d": "A sudden loss of blood to the brain. PW Botha suffered one in 1989 and never recovered his grip on the party."
+      }
+    ]
+  },
+  {
+    "type": "narrative",
+    "stage": "Act",
+    "html": "<div class=\"stage-tag\">The evidence</div><h2>October 1989: Six Men Walk Out</h2><p>The first real signal came in <span class=\"key\">October 1989</span>. The government released Walter Sisulu, Govan Mbeki, Ahmed Kathrada, Andrew Mlangeni, Elias Motsoaledi and Raymond Mhlaba, most of them jailed with Mandela after the Rivonia Trial. They walked out four months before he did.</p><p>Why release them first? It tested the country. If the townships did not explode, releasing Mandela became possible.</p><div class=\"memory\"><div class=\"memory-label\">Remember it like this</div><p>You do not jump into cold water. You put a foot in first.</p><p>Sisulu in <span class=\"key\">October 1989</span> was the foot. Mandela in <span class=\"key\">February 1990</span> was the jump.</p></div>",
+    "terms": [
+      {
+        "t": "Rivonia Trial",
+        "d": "The 1963 to 1964 trial at which Mandela, Sisulu, Mbeki, Kathrada and others were sentenced to life imprisonment."
+      }
+    ]
   },
   {
     "type": "question",
     "stage": "Act",
     "level": "Evidence",
-    "q": "You are arguing that leaders had prepared the ground before 1990. Which piece of evidence is specific enough to use?",
+    "q": "Who was released in October 1989, four months before Mandela?",
     "options": [
-      "Business leaders led by Gavin Relly met Oliver Tambo in Lusaka in 1985",
-      "South Africans had wanted to speak to the ANC for years before 1990",
-      "There were several secret contacts between the two sides during the late 1980s",
-      "White business had grown steadily unhappier with apartheid rule throughout the whole decade"
+      "Walter Sisulu and other prisoners from the Rivonia Trial",
+      "Oliver Tambo and the leadership of the ANC in exile",
+      "Chris Hani and the leadership of the armed wing",
+      "Steve Biko and the leaders of Black Consciousness"
     ],
     "correct": 0,
-    "explanation": "{opt0} gives you a name, a place and a year. That is what specific evidence looks like on paper. {opt1}, {opt2} and {opt3} are all true and all vague. A marker cannot credit a fact that could describe any meeting in the 1980s. Vague evidence keeps your paragraph on middle marks."
+    "explanation": "{opt0}. Sisulu, Mbeki, Kathrada, Mlangeni, Motsoaledi and Mhlaba. {opt1} is wrong because Tambo was in exile, not in prison. {opt3} is wrong because Biko had died in detention in 1977. Name Sisulu and October 1989 and you show the marker that February 1990 was a step in a sequence, not a bolt from nowhere."
+  },
+  {
+    "type": "question",
+    "stage": "Act",
+    "level": "Argue",
+    "q": "Which sentence argues, rather than just telling the marker what happened?",
+    "options": [
+      "Botha's removal mattered because it put a leader in office willing to test negotiation",
+      "PW Botha suffered a stroke in 1989 and was then replaced by FW de Klerk",
+      "In 1989 the National Party chose a new leader and De Klerk became president",
+      "Botha's removal proves the government had already given up on apartheid entirely"
+    ],
+    "correct": 0,
+    "explanation": "{opt0} says what changed and why it mattered. That is what arguing means here. {opt1} is the trap. It is true, and it stops there. It gives the marker a fact and waits for them to work out your point. They will not. Say the point yourself, or you get marks for background instead of marks for argument."
   },
   {
     "type": "narrative",
     "stage": "Act",
-    "html": "<div class=\"stage-tag\">The evidence</div><h2>2 February 1990</h2><p>In his opening address to parliament, De Klerk unbanned the ANC, the PAC and the SACP along with other banned organisations. He announced the release of political prisoners and lifted a set of restrictions that had held for thirty years.</p><p>Nine days later, on 11 February 1990, Nelson Mandela walked out of prison after twenty seven years, without conditions attached.</p><p class=\"pull\">He did not have to do it in that order, at that speed, or in that much detail. He chose to.</p><p>Notice what the announcement did not do. It did not end apartheid. The laws stayed on the books. What it did was make negotiation possible by putting the other side back in the room legally.</p>"
+    "html": "<div class=\"stage-tag\">The evidence</div><h2>2 February 1990</h2><p>In his opening address to parliament, De Klerk announced:</p><p class=\"sort-prompt\">Tap the arrows to read all 4.</p><div class=\"car\" data-car=\"[&quot;The <strong>ANC, the PAC and the SACP</strong> were unbanned, along with about thirty other organisations.&quot;, &quot;Political prisoners held for belonging to those organisations would be <strong>released</strong>.&quot;, &quot;The <strong>death penalty</strong> was suspended, and restrictions on individuals were lifted.&quot;, &quot;<strong>Nelson Mandela</strong> would be freed, unconditionally.&quot;]\"><div class=\"car-prompt\" data-car-prompt></div><div class=\"car-frame\"><div class=\"car-count\" data-car-count></div><div class=\"car-body\" data-car-body></div></div><div class=\"car-nav\"><button class=\"btn-small\" data-car-prev>&larr;</button><span class=\"car-hint\" data-car-hint></span><div class=\"car-dots\"><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button></div><button class=\"btn-small\" data-car-next>&rarr;</button></div></div>",
+    "terms": [
+      {
+        "t": "unbanning",
+        "d": "Making a banned organisation legal again. It could then hold meetings, recruit members and speak in public."
+      },
+      {
+        "t": "political prisoner",
+        "d": "Someone jailed for opposing the government rather than for an ordinary crime."
+      },
+      {
+        "t": "banned organisation",
+        "d": "A group made illegal by the state. Belonging to one, or quoting its leaders, was a criminal offence."
+      }
+    ]
+  },
+  {
+    "type": "narrative",
+    "stage": "Act",
+    "html": "<div class=\"stage-tag\">The evidence</div><h2>11 February 1990</h2><p>Nine days later, on <span class=\"key\">11 February 1990</span>, Mandela walked out of Victor Verster prison after twenty seven years and spoke that evening on the Grand Parade in Cape Town.</p><p class=\"pull\">Put the speech next to the Harare list. Most of what the ANC asked for is there, in one morning.</p><figure class=\"figure\"><svg viewBox=\"0 0 400 198\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A deadlock in 1989, then three decisions taken by February 1990: Botha replaced by De Klerk, the movements unbanned on 2 February, and Mandela released on 11 February.\"><line x1=\"20\" y1=\"44\" x2=\"168\" y2=\"44\" style=\"stroke:var(--ink-soft);stroke-width:2\"/><polygon points=\"184,44 166,38 166,50\" style=\"fill:var(--ink-soft)\"/><line x1=\"380\" y1=\"44\" x2=\"232\" y2=\"44\" style=\"stroke:var(--ink-soft);stroke-width:2\"/><polygon points=\"216,44 234,38 234,50\" style=\"fill:var(--ink-soft)\"/><rect x=\"196\" y=\"30\" width=\"8\" height=\"28\" style=\"fill:var(--flame)\"/><text x=\"200\" y=\"76\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:13px;fill:var(--ink)\">Neither side can win</text><line x1=\"20\" y1=\"128\" x2=\"380\" y2=\"128\" style=\"stroke:var(--hair);stroke-width:2\"/><circle cx=\"66\" cy=\"128\" r=\"5\" style=\"fill:var(--flame)\"/><circle cx=\"200\" cy=\"128\" r=\"5\" style=\"fill:var(--flame)\"/><circle cx=\"336\" cy=\"128\" r=\"5\" style=\"fill:var(--flame)\"/><text x=\"66\" y=\"114\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--flame)\">1989</text><text x=\"200\" y=\"114\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--flame)\">2 Feb 1990</text><text x=\"336\" y=\"114\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--flame)\">11 Feb 1990</text><text x=\"66\" y=\"150\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:12px;fill:var(--ink)\">Botha out,</text><text x=\"66\" y=\"166\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:12px;fill:var(--ink)\">De Klerk in</text><text x=\"200\" y=\"150\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:12px;fill:var(--ink)\">ANC, PAC and</text><text x=\"200\" y=\"166\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:12px;fill:var(--ink)\">SACP unbanned</text><text x=\"336\" y=\"150\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:12px;fill:var(--ink)\">Mandela freed,</text><text x=\"336\" y=\"166\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:12px;fill:var(--ink)\">no conditions</text></svg><figcaption>The deadlock, and the three steps that broke it. Botha was replaced by De Klerk in 1989. The movements were unbanned on 2 February 1990. Mandela walked out on 11 February 1990. The dates matter because the deadlock had held for years, and those last two steps were nine days apart. Original diagram by Kula Revise.</figcaption></figure>"
   },
   {
     "type": "question",
@@ -444,26 +695,64 @@ const FLOW = [
       "Not at all, since the announcements were forced on the government from outside"
     ],
     "correct": 2,
-    "explanation": "{opt2} is the weighed answer, and this whole essay is built on it. Pressure explains why something had to give. It does not explain unbanning three organisations on one morning. It does not explain releasing Mandela with no conditions. {opt0} hands your argument to sanctions and leaves you nothing to prove. {opt1} and {opt3} ignore the ledger you just read. The question asks to what extent, so an answer with no limits on it cannot reach the top marks."
+    "explanation": "{opt2} is right, and this unit keeps coming back to it. Pressure explains why the government had to do something. It does not explain what De Klerk actually did. He unbanned about thirty organisations in one speech. He let Mandela out with nothing asked in return. He chose both. Pick {opt0} and you are saying the pressure did it all, which leaves you nothing to argue. The question asks how far. Answer with completely, or with not at all, and you cannot reach the top marks."
   },
   {
     "type": "narrative",
     "stage": "Act",
-    "html": "<div class=\"stage-tag\">The rule that decides marks</div><h2>The Dates Are Part of the Question</h2><p>Your essay question asks about the negotiation process that led to a democratic South Africa in 1994. That fixes your range: 1989 to the election and the new government in 1994.</p><p>Material outside that range earns nothing on its own. The 1976 uprising, the 1980s emergencies and the whole story of the Truth and Reconciliation Commission after 1995 are real history and the wrong history for this question.</p><p>Background before 1989 is allowed in one job only: explaining something inside the range. The secret contacts you just read about qualify, because they explain the speed of 1990.</p>"
+    "html": "<div class=\"stage-tag\">The evidence</div><h2>What 2 February Did Not Do</h2><p>This is the part most people miss, and it is worth a mark every time.</p><p>De Klerk made negotiation legally possible. He did not end apartheid. On <span class=\"key\">11 February 1990</span> every apartheid law was still in force. People were still classified by race at birth, still forced to live in areas set aside for that race, and still barred from owning most of the country.</p><p>The three pillars came down in <span class=\"key\">June 1991</span>: the Population Registration Act, the Group Areas Act and the Land Acts were repealed. That is sixteen months after the speech, and it happened because negotiation had started, not before it.</p><div class=\"memory\"><div class=\"memory-label\">Remember it like this</div><p><span class=\"key\">February 1990</span> unlocked the door. <span class=\"key\">June 1991</span> took the walls down.</p><p>Two different dates, two different jobs. Mix them and you lose the mark.</p></div><figure class=\"figure\"><svg viewBox=\"0 0 400 198\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Two columns. On 2 February 1990 the movements were unbanned, prisoners were released and the death penalty was suspended. Still in force were race classification, the Group Areas Act and the Land Acts, all repealed in June 1991.\"><text x=\"95\" y=\"30\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:12px;fill:var(--flame)\">2 February 1990</text><text x=\"305\" y=\"30\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:12px;fill:var(--bad-border)\">Still in force</text><rect x=\"15\" y=\"58\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"95\" y=\"77\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Movements unbanned</text><rect x=\"15\" y=\"96\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"95\" y=\"115\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Prisoners released</text><rect x=\"15\" y=\"134\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"95\" y=\"153\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Death penalty suspended</text><rect x=\"225\" y=\"58\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"305\" y=\"77\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Race classification</text><rect x=\"225\" y=\"96\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"305\" y=\"115\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Group Areas Act</text><rect x=\"225\" y=\"134\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"305\" y=\"153\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Land Acts</text><line x1=\"200\" y1=\"44\" x2=\"200\" y2=\"176\" style=\"stroke:var(--hair);stroke-width:1;stroke-dasharray:3 4\"/></svg><figcaption>What the speech of 2 February 1990 changed, and what it left standing. The three laws on the right were repealed in June 1991. The dates matter because February made talks legal and June ended legal apartheid. Original diagram by Kula Revise.</figcaption></figure>",
+    "terms": [
+      {
+        "t": "Population Registration Act",
+        "d": "The law that classified every person by race at birth. It was the base that the rest of apartheid was built on."
+      },
+      {
+        "t": "Group Areas Act",
+        "d": "The law that set aside separate residential areas for each race group and forced people to move."
+      },
+      {
+        "t": "Land Acts",
+        "d": "The laws of 1913 and 1936 that limited African land ownership to a small share of the country."
+      }
+    ]
   },
   {
     "type": "question",
     "stage": "Act",
     "level": "Weigh",
-    "q": "A learner ends this essay with a paragraph on the Truth and Reconciliation Commission hearings. What is wrong with it?",
+    "q": "A learner writes that apartheid ended on 2 February 1990. How far is that right?",
+    "options": [
+      "Not right. The speech made talks legal, and the apartheid laws fell in 1991",
+      "Right, because unbanning the ANC removed the legal basis of apartheid rule entirely",
+      "Right, because the release of Mandela was the formal end of the whole system",
+      "Not right, because apartheid only ended when the new constitution was written"
+    ],
+    "correct": 0,
+    "explanation": "{opt0}. The speech changed who could speak, not who could live where. {opt1} and {opt2} both treat one day as the end of a system that still had every law behind it. {opt3} is closer but pushes the repeals too late: they came in June 1991. Get these two dates in the right order and your context paragraph earns its marks."
+  },
+  {
+    "type": "narrative",
+    "stage": "Act",
+    "html": "<div class=\"stage-tag\">The rule that decides marks</div><h2>The Dates Are Part of the Question</h2><p>Essay questions on this unit ask about the negotiation process that led to democracy in <span class=\"key\">1994</span>. That fixes the range you can use: <span class=\"key\">1989</span> to the election and the new government in <span class=\"key\">1994</span>.</p><p>Material outside that range earns nothing on its own:</p><ul class=\"blist\"><li>The <span class=\"key\">1976</span> uprising.</li><li>The states of emergency of the 1980s.</li><li>The whole story of the Truth and Reconciliation Commission after <span class=\"key\">1995</span>.</li></ul><p>All three are real history and the wrong history for this question.</p><p>Background before <span class=\"key\">1989</span> is allowed for one job only: explaining something inside the range. The secret contacts qualify, because they explain the speed of <span class=\"key\">1990</span>.</p>"
+  },
+  {
+    "type": "question",
+    "stage": "Act",
+    "level": "Weigh",
+    "q": "A learner answers a question on the negotiations with a paragraph on the Truth and Reconciliation Commission. What is wrong with it?",
     "options": [
       "It sits outside the question's range, so it earns nothing no matter how good",
       "It is inaccurate, because the commission never dealt with the negotiation period",
       "It repeats content the marker will already have seen in an earlier question",
-      "It belongs at the start of the essay rather than at the end of it"
+      "It belongs at the start of the answer rather than at the end of it"
     ],
     "correct": 0,
-    "explanation": "{opt0} is right. The Truth and Reconciliation Commission is real history, and it is examined on this same paper as a source question. This question stops in 1994. A strong paragraph on the wrong period earns nothing at all. You will not get part marks for good writing about the wrong years."
+    "explanation": "{opt0}. The commission is real history, and it is examined on this same paper as a source question. This question stops in 1994. That is the cruel part. You can write a good paragraph here and the marker can give you nothing for it. Check the years in the question before you start planning."
+  },
+  {
+    "type": "narrative",
+    "stage": "Act",
+    "html": "<div class=\"stage-tag\">Before you move on</div><div class=\"recap\"><h2>The Facts From Lesson 1</h2><p class=\"sort-prompt\">Tap the arrows to read all 7.</p><div class=\"car\" data-car=\"[&quot;<strong><span class=\\&quot;key\\&quot;>1989</span>:</strong> stalemate. The state could not crush resistance; the movements could not take power.&quot;, &quot;<strong><span class=\\&quot;key\\&quot;>21 August 1989</span>:</strong> the Harare Declaration sets five conditions for talks. Release prisoners, unban organisations, troops out of townships, end the emergency, stop political executions.&quot;, &quot;<strong><span class=\\&quot;key\\&quot;>1989</span>:</strong> PW Botha suffers a stroke, falls out with his party, and is replaced by FW de Klerk.&quot;, &quot;<strong><span class=\\&quot;key\\&quot;>October 1989</span>:</strong> Walter Sisulu and other Rivonia prisoners are released, four months before Mandela.&quot;, &quot;<strong><span class=\\&quot;key\\&quot;>2 February 1990</span>:</strong> De Klerk unbans the ANC, the PAC and the SACP and about thirty other organisations.&quot;, &quot;<strong><span class=\\&quot;key\\&quot;>11 February 1990</span>:</strong> Mandela walks out of Victor Verster prison, unconditionally, after twenty seven years.&quot;, &quot;<strong><span class=\\&quot;key\\&quot;>June 1991</span>:</strong> the Population Registration Act, the Group Areas Act and the Land Acts are repealed. <span class=\\&quot;key\\&quot;>February 1990</span> legalised talks; <span class=\\&quot;key\\&quot;>June 1991</span> ended legal apartheid.&quot;]\"><div class=\"car-prompt\" data-car-prompt></div><div class=\"car-frame\"><div class=\"car-count\" data-car-count></div><div class=\"car-body\" data-car-body></div></div><div class=\"car-nav\"><button class=\"btn-small\" data-car-prev>&larr;</button><span class=\"car-hint\" data-car-hint></span><div class=\"car-dots\"><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button><button class=\"car-dot\" data-car-dot></button></div><button class=\"btn-small\" data-car-next>&rarr;</button></div></div></div>"
   },
   {
     "type": "question",
@@ -471,7 +760,7 @@ const FLOW = [
     "level": "Argue",
     "build": true,
     "part": "Neither side could win, but a stalemate does not negotiate itself: leaders had to choose to act on it, and in 1990 De Klerk and Mandela did.",
-    "q": "Sentence one of your essay. Which opening takes a line you can defend for the next four lessons?",
+    "q": "Sum this lesson up in one sentence. Which one holds up across the next four lessons?",
     "options": [
       "Neither side could win, but a stalemate does not negotiate itself: leaders had to choose to act on it, and in 1990 De Klerk and Mandela did",
       "By 1989 the country had reached a stalemate, and in February 1990 De Klerk unbanned the liberation movements and then released Nelson Mandela from jail nine days later",
@@ -479,12 +768,14 @@ const FLOW = [
       "South Africa became a democracy in 1994 because Nelson Mandela was a great leader who forgave his enemies and finally united a deeply divided country"
     ],
     "correct": 0,
-    "explanation": "{opt0} concedes the deadlock and then insists that somebody still had to act. You can hold that line and test it for four lessons. {opt1} is accurate narration and takes no position. {opt2} hands the essay to sanctions in one move, and then you have nothing left to argue. {opt3} answers a different question about one man's character. A marker looks for your line of argument in the first few lines, so an opening that only describes starts you on low marks."
+    "explanation": "{opt0} admits both sides were stuck, then says someone still had to act. You can defend that for four lessons. {opt1} is the trap. It is accurate and it picks no side. Start like that and the marker has nothing to give you marks for yet. {opt2} gives everything to sanctions in one line. {opt3} is about whether Mandela was a good man, which is not what you were asked."
   },
   {
-    "type": "narrative",
+    "type": "summary",
     "stage": "Transfer",
-    "html": "<div class=\"stage-tag\">Beyond the exam</div><h2>What You Did Just Now</h2><p>You took a situation everyone agrees on and asked what was still left to decide inside it. That is the move that separates an explanation from an excuse, and you will use it far away from this topic.</p><p>Every time someone tells you a thing was inevitable, the useful question is the one you asked on the first screen. Who still had to choose, and what did choosing cost them?</p>"
+    "label": "Where you are",
+    "heading": "Your Running Summary",
+    "note": "That is 1989 to February 1990 in one sentence. Three more to go."
   }
 ];
 
@@ -500,7 +791,7 @@ const KIND = {
 };
 const LEVELS = ["Argue","Evidence","Weigh"];
 
-const state = { idx:0, answers:{}, revealed:{}, order:{} };
+const state = { idx:0, answers:{}, revealed:{}, order:{}, picks:{}, placed:{}, added:{} };
 const questionIds = FLOW.map((f,i)=>f.type==="question"?i:null).filter(i=>i!==null);
 const assessedIds = FLOW.map((f,i)=>(f.type==="question"&&f.level)?i:null).filter(i=>i!==null);
 const buildIds = FLOW.map((f,i)=>f.build?i:null).filter(i=>i!==null);
@@ -514,29 +805,52 @@ const card=document.getElementById("flow-card");
 const backBtn=document.getElementById("back-btn");
 const nextBtn=document.getElementById("next-btn");
 
-document.getElementById("begin-btn").addEventListener("click",()=>{
+const SKIP_TO = 4;
+function beginAt(i){
+  state.idx = i;
   startScreen.classList.add("hidden"); flowScreen.classList.remove("hidden"); topBar.classList.remove("hidden"); render();
+}
+document.getElementById("begin-btn").addEventListener("click",()=>beginAt(0));
+if (SKIP_TO > 0 && SKIP_TO < FLOW.length) {
+  const sb=document.getElementById("skip-btn");
+  sb.classList.remove("hidden");
+  sb.addEventListener("click",()=>beginAt(SKIP_TO));
+}
+backBtn.addEventListener("click",()=>{
+  if(state.idx>0){ state.idx--; render(); }
+  else { flowScreen.classList.add("hidden"); topBar.classList.add("hidden"); startScreen.classList.remove("hidden"); window.scrollTo({top:0,behavior:"smooth"}); }
 });
-backBtn.addEventListener("click",()=>{ if(state.idx>0){state.idx--;render();} });
 nextBtn.addEventListener("click",()=>{ if(state.idx<FLOW.length-1){state.idx++;render();} else {showResults();} });
 document.getElementById("redo-btn").addEventListener("click",()=>location.reload());
+const addedModal=document.getElementById("added-modal");
+document.getElementById("added-close").addEventListener("click",()=>addedModal.classList.add("hidden"));
+addedModal.addEventListener("click",(e)=>{ if(e.target===addedModal) addedModal.classList.add("hidden"); });
 
 function render(){
   const item=FLOW[state.idx];
   document.getElementById("step-count").textContent=`Step ${state.idx+1} of ${FLOW.length}`;
   document.getElementById("fill").style.width=((state.idx+1)/FLOW.length*100)+"%";
-  backBtn.disabled=state.idx===0;
-  if(item.type==="question") renderQuestion(item);
+  backBtn.innerHTML = state.idx===0 ? "&larr; Back to the start" : "&larr; Back";
+  if(item.type==="story") renderStory(item);
+  else if(item.type==="summary") renderSummary(item);
+  else if(item.type==="question") renderQuestion(item);
   else if(item.type==="essay") renderEssay();
   else if(item.type==="source") renderSource(item);
   else renderStatic(item);
-  nextBtn.disabled = item.type==="question" ? !state.revealed[state.idx] : false;
+  if(item.type==="question") nextBtn.disabled=!state.revealed[state.idx];
+  else if(item.type!=="story") nextBtn.disabled=false;
   nextBtn.innerHTML = state.idx===FLOW.length-1 ? "See results &rarr;" : "Continue &rarr;";
   window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function essayParts(uptoIdx){
   return buildIds.filter(i=>i<=uptoIdx && state.revealed[i]).map(i=>FLOW[i].part);
+}
+function renderSummary(item){
+  const parts=buildIds.filter(i=>state.revealed[i]).map(i=>FLOW[i].part);
+  card.innerHTML='<div class="stage-tag">'+item.label+'</div><h2>'+item.heading+'</h2>'
+    +'<div class="essaypanel">'+parts.map(p=>'<p>'+p+'</p>').join("")+'</div>'
+    +(item.note?'<p style="margin-top:1.1rem;color:var(--ink-soft);">'+item.note+'</p>':'');
 }
 function renderEssay(){
   const parts=buildIds.map(i=>FLOW[i].part);
@@ -545,7 +859,217 @@ function renderEssay(){
     <div class="finalessay"><div class="fq">${QUESTION}</div>${parts.map(p=>`<p>${p}</p>`).join("")}</div>
     <p style="margin-top:1.1rem;color:var(--ink-soft);">${ESSAY_SCREEN.outro}</p>`;
 }
-function renderStatic(item){ card.innerHTML=item.html; bindToggles(); }
+function termsBlock(item){
+  if(!item.terms || !item.terms.length) return "";
+  const chips=item.terms.map((x,i)=>`<button class="term-btn" data-term="${i}">${x.t}<span class="plus">+</span></button>`).join("");
+  const defs=item.terms.map((x,i)=>`<div class="term-def" data-termdef="${i}"><strong>${x.t}</strong>${x.d}</div>`).join("");
+  return `<div class="terms"><div class="terms-label">Key terms &middot; tap to open</div><div class="term-row">${chips}</div>${defs}</div>`;
+}
+let lineTimers=[];
+function clearLines(){ lineTimers.forEach(clearTimeout); lineTimers=[]; }
+function renderStory(item){
+  clearLines();
+  let h='<div class="story"><div class="story-marker"><div class="story-num">'+item.marker+'</div>'
+      +'<div class="story-unit">'+item.markerLabel+'</div></div><div class="story-rule"></div>';
+  item.lines.forEach((l,i)=>{
+    const cls = i===item.lines.length-1 ? "story-line last" : "story-line";
+    h+='<div class="'+cls+'" id="sline_'+i+'">'+l+'</div>';
+  });
+  h+='</div>';
+  card.innerHTML=h;
+  nextBtn.disabled=true;
+  const step=650;
+  item.lines.forEach((_,i)=>{
+    lineTimers.push(setTimeout(()=>{
+      const el=document.getElementById("sline_"+i);
+      if(el) el.classList.add("vis");
+    }, 250+(i*step)));
+  });
+  lineTimers.push(setTimeout(()=>{ nextBtn.disabled=false; }, 250+(item.lines.length*step)));
+}
+
+// ---- carousel ----
+function bindCarousels(){
+  const boxes=card.querySelectorAll("[data-car]");
+  if(boxes.length){ nextBtn.disabled=true; }
+  const seen=[];
+  const checkAll=()=>{ if(seen.every(s=>s)) nextBtn.disabled=false; };
+  boxes.forEach((box,bi)=>{
+    const items=JSON.parse(box.getAttribute("data-car"));
+    if(!box.querySelector("[data-car-prompt]")){
+      box.insertAdjacentHTML("afterbegin",'<div class="car-prompt" data-car-prompt></div>');
+    }
+    const viewed=new Array(items.length).fill(false);
+    seen[bi]=false;
+    let i=0;
+    const frame=box.querySelector("[data-car-body]");
+    const count=box.querySelector("[data-car-count]");
+    const dots=box.querySelectorAll("[data-car-dot]");
+    const hint=box.querySelector("[data-car-hint]");
+    const prompt=box.querySelector("[data-car-prompt]");
+    const draw=()=>{
+      frame.innerHTML=items[i];
+      viewed[i]=true;
+      count.textContent=(i+1)+" of "+items.length;
+      dots.forEach((d,j)=>{ d.classList.toggle("on", j===i); d.classList.toggle("read", viewed[j]); });
+      if(viewed.every(v=>v)){ seen[bi]=true; checkAll(); }
+      const left=viewed.filter(v=>!v).length;
+      if(hint) hint.textContent = left ? left+" more to read" : "All read";
+      if(prompt){
+        prompt.innerHTML = left
+          ? '<span class="cp-mark">&rarr;</span><span>Tap through all '+items.length+' cards. Continue unlocks once you have read them.</span>'
+          : '<span class="cp-mark">&#10003;</span><span>All '+items.length+' read. Continue is unlocked.</span>';
+        prompt.classList.toggle("done", left===0);
+      }
+    };
+    box.querySelector("[data-car-prev]").addEventListener("click",()=>{ i=(i-1+items.length)%items.length; draw(); });
+    box.querySelector("[data-car-next]").addEventListener("click",()=>{ i=(i+1)%items.length; draw(); });
+    dots.forEach((d,j)=>d.addEventListener("click",()=>{ i=j; draw(); }));
+    let x0=null;
+    box.addEventListener("touchstart",e=>{ x0=e.touches[0].clientX; },{passive:true});
+    box.addEventListener("touchend",e=>{
+      if(x0===null) return;
+      const dx=e.changedTouches[0].clientX-x0;
+      if(Math.abs(dx)>40){ i=(i+(dx<0?1:items.length-1))%items.length; draw(); }
+      x0=null;
+    },{passive:true});
+    draw();
+  });
+}
+
+// ---- put in order ----
+function renderOrder(item, gi){
+  const revealed=state.revealed[gi];
+  const picked=state.picks[gi]||[];
+  if(!state.order[gi]){
+    const arr=item.items.map((_,i)=>i);
+    for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=arr[i]; arr[i]=arr[j]; arr[j]=t; }
+    state.order[gi]=arr;
+  }
+  const tag=DIFF[item.level];
+  let chosen="";
+  picked.forEach((orig,pos)=>{
+    let cls="ord-slot filled";
+    if(revealed) cls+= (orig===pos ? " right" : " wrong");
+    chosen+='<button class="'+cls+'" data-drop="'+pos+'" '+(revealed?"disabled":"")+'>'
+      +'<span class="ord-rank">'+(pos+1)+'</span><span class="ord-txt">'+item.items[orig]+'</span>'
+      +(revealed?"":'<span class="ord-x">&#10007;</span>')+'</button>';
+  });
+  let pool="";
+  state.order[gi].forEach(orig=>{
+    if(picked.indexOf(orig)!==-1) return;
+    pool+='<button class="ord-chip" data-pick="'+orig+'" '+(revealed?"disabled":"")+'>'+item.items[orig]+'</button>';
+  });
+  const all=picked.length===item.items.length;
+  card.innerHTML='<div class="stage-tag"><span class="chip '+tag.cls+'">'+tag.label+'</span></div>'
+    +'<div class="q-text">'+item.q+'</div>'
+    +'<div class="sort-prompt">Tap the events in order, earliest first. Tap one you have placed to take it back.</div>'
+    +(chosen?'<div class="ord-strip">'+chosen+'</div>':'')
+    +(pool?'<div class="ord-pool">'+pool+'</div>':'')
+    +'<div class="ord-actions"><button class="btn-small" id="ord-check" '+((!all||revealed)?"disabled":"")+'>Check my order</button></div>'
+    +(revealed?'<div class="explanation"><div class="expl-label">Why</div><div class="expl-text">'+item.explanation+'</div></div>':"");
+  if(!revealed){
+    card.querySelectorAll("[data-pick]").forEach(b=>b.addEventListener("click",()=>{
+      state.picks[gi]=(state.picks[gi]||[]).concat([parseInt(b.dataset.pick)]); render();
+    }));
+    card.querySelectorAll("[data-drop]").forEach(b=>b.addEventListener("click",()=>{
+      const pos=parseInt(b.dataset.drop);
+      const arr=(state.picks[gi]||[]).slice(); arr.splice(pos,1);
+      state.picks[gi]=arr; render();
+    }));
+    const ch=document.getElementById("ord-check");
+    if(ch) ch.addEventListener("click",()=>{
+      const pk=state.picks[gi]||[];
+      state.answers[gi]= pk.every((v,i)=>v===i) ? item.correct : -1;
+      state.revealed[gi]=true; render();
+    });
+  }
+}
+
+// ---- sort into two groups ----
+function renderSort(item, gi){
+  const revealed=state.revealed[gi];
+  const placed=state.placed[gi]||{};
+  const tag=DIFF[item.level];
+  const cols=item.groups.map((g,ci)=>{
+    let tags="";
+    item.items.forEach((it,ii)=>{
+      if(placed[ii]!==ci) return;
+      let cls="sort-tag";
+      if(revealed) cls+= (item.answers[ii]===ci ? " right" : " wrong");
+      tags+='<button class="'+cls+'" data-unplace="'+ii+'" '+(revealed?"disabled":"")+'>'+it+'</button>';
+    });
+    return '<div class="sort-col"><h4>'+g+'</h4>'+tags+'</div>';
+  }).join("");
+  let pool="";
+  item.items.forEach((it,ii)=>{
+    if(placed[ii]!==undefined) return;
+    pool+='<div class="ord-chip" style="cursor:default;">'+it
+      +'<div style="display:flex;gap:0.4rem;margin-top:0.5rem;">'
+      + item.groups.map((g,ci)=>'<button class="btn-small" data-place="'+ii+'-'+ci+'">'+g+'</button>').join("")
+      +'</div></div>';
+  });
+  const done=Object.keys(placed).length===item.items.length;
+  card.innerHTML='<div class="stage-tag"><span class="chip '+tag.cls+'">'+tag.label+'</span></div>'
+    +'<div class="q-text">'+resolveNone(item.q)+'</div>'
+    +'<div class="sort-prompt">Put each one in a column. Tap a card in a column to take it back.</div>'
+    +'<div class="sort-cols">'+cols+'</div>'
+    +(pool?'<div class="ord-pool">'+pool+'</div>':"")
+    +'<div class="ord-actions"><button class="btn-small" id="sort-check" '+((!done||revealed)?"disabled":"")+'>Check</button></div>'
+    +(revealed?'<div class="explanation"><div class="expl-label">Why</div><div class="expl-text">'+item.explanation+'</div></div>':"");
+  if(!revealed){
+    card.querySelectorAll("[data-place]").forEach(b=>b.addEventListener("click",()=>{
+      const [ii,ci]=b.dataset.place.split("-").map(Number);
+      state.placed[gi]=Object.assign({},state.placed[gi]||{},{[ii]:ci}); render();
+    }));
+    card.querySelectorAll("[data-unplace]").forEach(b=>b.addEventListener("click",()=>{
+      const o=Object.assign({},state.placed[gi]||{}); delete o[parseInt(b.dataset.unplace)];
+      state.placed[gi]=o; render();
+    }));
+    const ch=document.getElementById("sort-check");
+    if(ch) ch.addEventListener("click",()=>{
+      const p=state.placed[gi]||{};
+      const right=item.items.every((_,ii)=>p[ii]===item.answers[ii]);
+      state.answers[gi]= right ? item.correct : -1;
+      state.revealed[gi]=true; render();
+    });
+  }
+}
+function resolveNone(s){ return String(s); }
+
+function showAdded(text){
+  const m=document.getElementById("added-modal");
+  document.getElementById("added-text").textContent=text;
+  m.classList.remove("hidden");
+}
+function bindMemory(){
+  card.querySelectorAll(".memory").forEach(box=>{
+    const label=box.querySelector(".memory-label");
+    if(!label || label.classList.contains("memory-toggle")) return;
+    const body=Array.prototype.slice.call(box.children).filter(el=>el!==label);
+    body.forEach(el=>{ el.style.display="none"; });
+    label.classList.add("memory-toggle");
+    label.insertAdjacentHTML("beforeend",'<span class="mplus">+</span>');
+    label.addEventListener("click",()=>{
+      const opening = body.length ? body[0].style.display==="none" : false;
+      body.forEach(el=>{ el.style.display = opening ? "" : "none"; });
+      box.classList.toggle("open", opening);
+      label.querySelector(".mplus").textContent = opening ? "\u2212" : "+";
+    });
+  });
+}
+function bindTerms(){
+  card.querySelectorAll("[data-term]").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const i=btn.dataset.term;
+      const def=card.querySelector(`[data-termdef="${i}"]`);
+      const open=def.classList.toggle("open");
+      btn.classList.toggle("open",open);
+      btn.querySelector(".plus").textContent = open ? "\u2212" : "+";
+    });
+  });
+}
+function renderStatic(item){ card.innerHTML=item.html+termsBlock(item); bindToggles(); bindTerms(); bindMemory(); bindCarousels(); }
 function renderSource(item){
   let html=item.html;
   if(item.source){
@@ -554,23 +1078,28 @@ function renderSource(item){
     const cl = s.clause ? `<span class="clause">${s.clause}</span>` : "";
     html+=`<div class="source">${cl}<div class="source-attr">${s.attr}</div>
       <div class="source-body">${s.body}</div>${ev}
-      <div><button class="toggle-btn" data-toggle>What does this actually mean?</button></div>
+      <div><button class="toggle-btn" data-toggle>What this actually means</button></div>
       <div class="toggle-body" data-toggle-body>${s.toggle}</div></div>`;
   }
-  card.innerHTML=html;
+  card.innerHTML=html+termsBlock(item);
   bindToggles();
+  bindTerms();
+  bindMemory();
+  bindCarousels();
 }
 function bindToggles(){
   card.querySelectorAll("[data-toggle]").forEach(btn=>{
     btn.addEventListener("click",()=>{
       const body=btn.closest(".source").querySelector("[data-toggle-body]");
       body.classList.toggle("open");
-      btn.textContent=body.classList.contains("open")?"Hide":"What does this actually mean?";
+      btn.textContent=body.classList.contains("open")?"Hide":"What this actually means";
     });
   });
 }
 function renderQuestion(item){
   const gi=state.idx;
+  if(item.mode==="order"){ renderOrder(item, gi); return; }
+  if(item.mode==="sort"){ renderSort(item, gi); return; }
   if(!state.order[gi]){
     const arr=item.options.map((_,i)=>i);
     for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=arr[i]; arr[i]=arr[j]; arr[j]=t; }
@@ -599,9 +1128,9 @@ function renderQuestion(item){
   });
   const explLabel = item.level ? "Why" : "What that shows";
   let panel="";
-  if(revealed && item.build){
-    panel=`<div class="essaypanel"><div class="essaypanel-label"><span class="tick">&#10003;</span> Added to your essay</div>`
-      + essayParts(gi).map(p=>`<p>${p}</p>`).join("") + `</div>`;
+  if(revealed && item.build && !state.added[gi]){
+    state.added[gi]=true;
+    setTimeout(()=>showAdded(item.part), 350);
   }
   card.innerHTML=`<div class="stage-tag"><span class="chip ${tag.cls}">${tag.label}</span></div>
     <div class="q-text">${resolve(item.q)}</div><div class="options">${optsHtml}</div>
@@ -635,13 +1164,12 @@ function showResults(){
       <div class="bd-score">${got}/${ids.length}</div></div>`;
   });
   window.scrollTo({top:0,behavior:"smooth"});
+  const dm=document.getElementById("done-modal");
+  document.getElementById("finish-btn").addEventListener("click",()=>dm.classList.remove("hidden"));
+  document.getElementById("done-close").addEventListener("click",()=>dm.classList.add("hidden"));
+  dm.addEventListener("click",(e)=>{ if(e.target===dm) dm.classList.add("hidden"); });
 }
 
-const themeBtn=document.getElementById("theme-btn");
-themeBtn.addEventListener("click",()=>{
-  const bright=document.body.classList.toggle("bright");
-  themeBtn.textContent = bright ? "Low light" : "Bright light";
-});
 </script>
 </body>
 </html>
