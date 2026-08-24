@@ -173,6 +173,8 @@
   .toggle-btn { background: transparent; border: none; color: var(--flame); cursor: pointer; font-family: var(--sans); font-size: 0.82rem; text-decoration: underline; padding: 0.65rem 0 0; }
   .toggle-body { display: none; margin-top: 0.7rem; padding-top: 0.7rem; border-top: 1px dashed var(--hair); font-size: 0.9rem; color: var(--ink-soft); line-height: 1.65; }
   .toggle-body.open { display: block; }
+  .toggle-body p { font-size: inherit; line-height: inherit; color: inherit; margin: 0 0 0.75rem; }
+  .toggle-body p:last-child { margin-bottom: 0; }
   .evtag { display: inline-block; margin-top: 0.9rem; font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; padding: 0.24rem 0.6rem; }
   .evtag.home { background: var(--chipA-bg); color: var(--chipA-fg); }
   .evtag.ground { background: var(--chipB-bg); color: var(--chipB-fg); }
@@ -546,7 +548,7 @@ const FLOW = [
         "cls": "ground",
         "label": "Evidence &middot; the deadlock"
       },
-      "toggle": "Every line here is a pressure, not a decision. The word for this position is a stalemate: neither side can force the other to move. Read the whole ledger and you still do not know why anyone picked up a phone. Your answer has to explain that, and the facts on this card will not do it for you."
+      "toggle": "<p>This card is a ledger with two columns and a result. On the government's side: resistance inside the country that emergency rule had not stopped, and sanctions and disinvestment from abroad. There is also the cost of the war in Angola and Namibia, and an economy short of foreign money. On the movements' side: the ANC banned since 1960, and leaders locked up or in exile for decades. There is also an armed struggle that could not bring the state down. And the Soviet Union was pulling back from funding its allies. The result at the foot is that neither side could impose an outcome.</p><p>Now the wording. \"Disinvestment\" means foreign companies pulling their money and operations out of a country. \"Foreign capital\" means money from outside coming in to be invested. The word for the position at the foot of the card is a stalemate. Neither side can force the other to move.</p><p>Notice what the card does not contain. Every line on it is a pressure, and not one of them is a decision. Read the whole ledger and you still do not know why anyone picked up a phone. Your answer has to explain that, and the facts on this card will not do it for you.</p>"
     }
   },
   {
@@ -607,8 +609,8 @@ const FLOW = [
     "level": "Evidence",
     "q": "Which of these was one of the five Harare Declaration demands?",
     "options": [
-      "Remove all of the government troops from the townships",
-      "Hand over the government to the ANC within one year",
+      "Remove all of the government's troops from the country's townships",
+      "Hand over the whole government to the ANC within one year",
       "Give back all of the land taken under the Land Acts",
       "Hold an election for white voters on the question of reform"
     ],
@@ -685,7 +687,7 @@ const FLOW = [
       "Walter Sisulu and other prisoners from the Rivonia Trial",
       "Oliver Tambo and the leadership of the ANC in exile",
       "Chris Hani and the leadership of the armed wing",
-      "Steve Biko and the leaders of Black Consciousness"
+      "Steve Biko and the leaders of the Black Consciousness Movement"
     ],
     "correct": 0,
     "explanation": "{opt0}. Sisulu, Mbeki, Kathrada, Mlangeni, Motsoaledi and Mhlaba. {opt1} is wrong because Tambo was in exile, not in prison. {opt3} is wrong because Biko had died in detention in 1977."
@@ -697,9 +699,9 @@ const FLOW = [
     "q": "Which sentence argues, rather than just telling the marker what happened?",
     "options": [
       "Botha's removal mattered because it put a leader in office willing to test negotiation",
-      "PW Botha suffered a stroke in 1989 and was then replaced by FW de Klerk",
+      "PW Botha suffered a stroke in 1989 and was replaced by FW de Klerk",
       "In 1989 the National Party chose a new leader and De Klerk became president",
-      "Botha's removal proves the government had already given up on apartheid entirely"
+      "Botha's removal proves that the government had already given up on apartheid entirely"
     ],
     "correct": 0,
     "explanation": "{opt0} says what changed and why it mattered. That's arguing. {opt1} tempts because it's completely true, but it stops at the fact and leaves the point unsaid."
@@ -745,7 +747,7 @@ const FLOW = [
   {
     "type": "narrative",
     "stage": "Act",
-    "html": "<div class=\"stage-tag\">The evidence</div><h2>What 2 February Did Not Do</h2><p>This is the part most people miss, and it is worth a mark every time.</p><p>De Klerk made negotiation legally possible. He did not end apartheid. On <span class=\"key\">11 February 1990</span> every apartheid law was still in force. People were still classified by race at birth, still forced to live in areas set aside for that race, and still barred from owning most of the country.</p><p>The three pillars came down in <span class=\"key\">June 1991</span>: the Population Registration Act, the Group Areas Act and the Land Acts were repealed. That is sixteen months after the speech, and it happened because negotiation had started, not before it.</p><div class=\"memory\"><div class=\"memory-label\">Remember it like this</div><p><span class=\"key\">February 1990</span> unlocked the door. <span class=\"key\">June 1991</span> took the walls down.</p><p>Two different dates, two different jobs. Mix them and you lose the mark.</p></div><figure class=\"figure\"><svg viewBox=\"0 0 400 198\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Two columns. On 2 February 1990 the movements were unbanned, prisoners were released and the death penalty was suspended. Still in force were race classification, the Group Areas Act and the Land Acts, all repealed in June 1991.\"><text x=\"95\" y=\"30\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:12px;fill:var(--flame)\">2 February 1990</text><text x=\"305\" y=\"30\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:12px;fill:var(--bad-border)\">Still in force</text><rect x=\"15\" y=\"58\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"95\" y=\"77\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Movements unbanned</text><rect x=\"15\" y=\"96\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"95\" y=\"115\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Prisoners released</text><rect x=\"15\" y=\"134\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"95\" y=\"153\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Death penalty suspended</text><rect x=\"225\" y=\"58\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"305\" y=\"77\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Race classification</text><rect x=\"225\" y=\"96\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"305\" y=\"115\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Group Areas Act</text><rect x=\"225\" y=\"134\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"305\" y=\"153\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Land Acts</text><line x1=\"200\" y1=\"44\" x2=\"200\" y2=\"176\" style=\"stroke:var(--hair);stroke-width:1;stroke-dasharray:3 4\"/></svg><figcaption>What the speech of 2 February 1990 changed, and what it left standing. The three laws on the right were repealed in June 1991. The dates matter because February made talks legal and June ended legal apartheid. Original diagram by Kula Revise.</figcaption></figure>",
+    "html": "<div class=\"stage-tag\">The evidence</div><h2>What 2 February Did Not Do</h2><p>This is the part you can easily miss, and it is worth a mark every time.</p><p>De Klerk made negotiation legally possible. He did not end apartheid. On <span class=\"key\">11 February 1990</span> every apartheid law was still in force. People were still classified by race at birth, still forced to live in areas set aside for that race, and still barred from owning most of the country.</p><p>The three pillars came down in <span class=\"key\">June 1991</span>: the Population Registration Act, the Group Areas Act and the Land Acts were repealed. That is sixteen months after the speech, and it happened because negotiation had started, not before it.</p><div class=\"memory\"><div class=\"memory-label\">Remember it like this</div><p><span class=\"key\">February 1990</span> unlocked the door. <span class=\"key\">June 1991</span> took the walls down.</p><p>Two different dates, two different jobs. Mix them and you lose the mark.</p></div><figure class=\"figure\"><svg viewBox=\"0 0 400 198\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Two columns. On 2 February 1990 the movements were unbanned, prisoners were released and the death penalty was suspended. Still in force were race classification, the Group Areas Act and the Land Acts, all repealed in June 1991.\"><text x=\"95\" y=\"30\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:12px;fill:var(--flame)\">2 February 1990</text><text x=\"305\" y=\"30\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:12px;fill:var(--bad-border)\">Still in force</text><rect x=\"15\" y=\"58\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"95\" y=\"77\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Movements unbanned</text><rect x=\"15\" y=\"96\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"95\" y=\"115\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Prisoners released</text><rect x=\"15\" y=\"134\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"95\" y=\"153\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Death penalty suspended</text><rect x=\"225\" y=\"58\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"305\" y=\"77\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Race classification</text><rect x=\"225\" y=\"96\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"305\" y=\"115\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Group Areas Act</text><rect x=\"225\" y=\"134\" width=\"160\" height=\"30\" rx=\"2\" style=\"fill:var(--white);stroke:var(--hair);stroke-width:1\"/><text x=\"305\" y=\"153\" text-anchor=\"middle\" style=\"font-family:Georgia,'Times New Roman',serif;font-size:11.5px;fill:var(--ink)\">Land Acts</text><line x1=\"200\" y1=\"44\" x2=\"200\" y2=\"176\" style=\"stroke:var(--hair);stroke-width:1;stroke-dasharray:3 4\"/></svg><figcaption>What the speech of 2 February 1990 changed, and what it left standing. The three laws on the right were repealed in June 1991. The dates matter because February made talks legal and June ended legal apartheid. Original diagram by Kula Revise.</figcaption></figure>",
     "terms": [
       {
         "t": "Population Registration Act",
@@ -765,7 +767,7 @@ const FLOW = [
     "type": "question",
     "stage": "Act",
     "level": "Weigh",
-    "q": "A learner writes that apartheid ended on 2 February 1990. How far is that right?",
+    "q": "What is wrong with this claim: 'Apartheid ended on 2 February 1990.'?",
     "options": [
       "Not right. The speech made talks legal, and the apartheid laws fell in 1991",
       "Right, because unbanning the ANC removed the legal basis of apartheid rule entirely",
@@ -787,9 +789,9 @@ const FLOW = [
     "q": "A learner answers a question on the negotiations with a paragraph on the Truth and Reconciliation Commission. What is wrong with it?",
     "options": [
       "It sits outside the question's range, so it earns nothing no matter how good",
-      "It is inaccurate, because the commission never dealt with the negotiation period",
-      "It repeats content the marker will already have seen in an earlier question",
-      "It belongs at the start of the answer rather than at the end of it"
+      "It is inaccurate, because the commission never dealt with the whole negotiation period",
+      "It repeats content that the marker will already have seen in an earlier question",
+      "It belongs at the start of the answer rather than at the end"
     ],
     "correct": 0,
     "explanation": "{opt0}. The commission is real history, and it is examined on this same paper as a source question. This question stops in 1994. So a good paragraph about the years afterwards counts for nothing here. Check the years in the question before you plan."
